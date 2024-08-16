@@ -32,7 +32,6 @@ if __name__ == "__main__":
         for i, title in enumerate(book_titles, 1):
             print(f"{i}. {title}")
 
-        # Save results to CSV
         csv_filename = "book_titles.csv"
         save_to_csv(book_titles, csv_filename)
     else:
