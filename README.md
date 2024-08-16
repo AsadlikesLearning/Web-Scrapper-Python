@@ -1,4 +1,4 @@
-# Book Title Scraper
+# Book Title Scraper in Python (web scraping)
 
 This Python script demonstrates a basic web scraper that extracts book titles from the "Books to Scrape" website (http://books.toscrape.com/). It's designed as an educational tool to learn about web scraping techniques using Python.
 
