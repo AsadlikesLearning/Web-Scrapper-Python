@@ -1,0 +1,26 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+def scrape_book_titles(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        titles = soup.find_all('h3')
+        return [title.a['title'] for title in titles]
+    else:
+        print(f"Failed to retrieve the webpage. Status code: {response.status_code}")
+        return []
+
+
+if __name__ == "__main__":
+    url = "http://books.toscrape.com/"
+    book_titles = scrape_book_titles(url)
+
+    if book_titles:
+        print("Books available:\n")
+
+    for i, title in enumerate(book_titles, 1):
+        print(f"{i}. {title}")
+    else:
+        print("No titles were found or there was an error.")
